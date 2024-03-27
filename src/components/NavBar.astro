@@ -1,0 +1,42 @@
+---
+const { pathname } = Astro.url;
+const pages = [
+  {
+    name: "HOME",
+    path: "/",
+  },
+  {
+    name: "EVENTS",
+    path: "/events",
+  },
+  {
+    name: "PODCASTS",
+    path: "/podcasts",
+  },
+  {
+    name: "INTERNATIONAL PRESENCE",
+    path: "/international",
+  },
+  {
+    name: "PARTNERS",
+    path: "/partners",
+  },
+];
+---
+
+<nav>
+  <ul class="flex gap-4">
+    {
+      pages.map((page: any) => (
+        <li class="font-medium shrink-0">
+          <a
+            class={pathname === page.path ? "text-[#000000]" : "text-[#8f8f8f]"}
+            href={page.path}
+          >
+            {page.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

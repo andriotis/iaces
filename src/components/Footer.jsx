@@ -1,3 +1,7 @@
 export default () => {
-  return <footer class="italic">This is the footer</footer>;
+  return (
+    <footer className="flex items-center justify-center italic">
+      This is the footer
+    </footer>
+  );
 };
